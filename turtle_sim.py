@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import turtle
 import time
 from main import convert
@@ -5,12 +6,13 @@ import sys
 
 
 def main():
-    msg = "Hello world!"
+    msgs = ["Hello world!", u"Russian: Привет мир", "subscribe!"]
 
     if len(sys.argv) > 1:
         msg = " ".join(sys.argv[1:])
+        msgs = [msg]
 
-    dots = convert(msg)
+    dots = convert(msgs)
 
     myPen = turtle.Turtle()
     myPen.hideturtle()
@@ -32,6 +34,6 @@ def main():
             myPen.penup()
             myPen.goto(x + dx, y + dy)
 
-
-main()
-time.sleep(2)
+if __name__ == '__main__':
+    main()
+    time.sleep(2)
